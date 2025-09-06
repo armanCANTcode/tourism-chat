@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>login</h1>
+<form method="POST" action="" >
+    {% if error %}
+    <p style="color: red; text-align: center;">{{ error }}</p>
+    {% endif %}
+    {% csrf_token %}
+    <p>username: <input type="text" name="name"></p><br><br>
+    <p>email: <input type="email" name="email"></p><br><br>
+    <p>password: <input type="password" name="password"></p>
+    <p><input type="submit" value="submit"></p>
+</form>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    form {
+        background: #fff;
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 30px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    p {
+        margin: 15px 0;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+        width: 95%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    input[type="submit"] {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background: #0056b3;
+    }
+</style>
+
+</body>
+</html>
